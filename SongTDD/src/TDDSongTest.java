@@ -6,7 +6,7 @@ class TDDSongTest {
     void TestFly() {
         TDDSong tddSong = new TDDSong();
         String[] cadena = {"fly"};
-        String result = tddSong.TDDSong(cadena);
+        String result = tddSong.generateSong(cadena);
         String esp = "There was an old lady who swallowed a fly.\n" +
                 "I don't know why she swallowed a fly - perhaps she'll die!\n";
         assertEquals(esp, result);
@@ -16,7 +16,7 @@ class TDDSongTest {
     void TestSpider() {
         TDDSong tddSong = new TDDSong();
         String[] cadena = {"spider"};
-        String result = tddSong.TDDSong(cadena);
+        String result = tddSong.generateSong(cadena);
         String esp = "There was an old lady who swallowed a spider.\n" +
                 "I don't know why she swallowed a spider - perhaps she'll die!\n";
         assertEquals(esp, result);
@@ -26,7 +26,7 @@ class TDDSongTest {
     void TestFlySpider() {
         TDDSong tddSong = new TDDSong();
         String[] cadena = {"fly", "spider"};
-        String result = tddSong.TDDSong(cadena);
+        String result = tddSong.generateSong(cadena);
         String esp = "There was an old lady who swallowed a fly.\n" +
                 "I don't know why she swallowed a fly - perhaps she'll die!\n" +
                 "\n" +
@@ -41,7 +41,7 @@ class TDDSongTest {
     void TestSpiderFly() {
         TDDSong tddSong = new TDDSong();
         String[] cadena = {"spider", "fly"};
-        String result = tddSong.TDDSong(cadena);
+        String result = tddSong.generateSong(cadena);
         String esp = "There was an old lady who swallowed a spider.\n" +
                 "I don't know why she swallowed a spider - perhaps she'll die!\n" +
                 "\n" +
@@ -56,7 +56,7 @@ class TDDSongTest {
     void TestFlySpiderBird() {
         TDDSong tddSong = new TDDSong();
         String[] cadena = {"fly", "spider", "bird"};
-        String result = tddSong.TDDSong(cadena);
+        String result = tddSong.generateSong(cadena);
         String esp = "There was an old lady who swallowed a fly.\n" +
                 "I don't know why she swallowed a fly - perhaps she'll die!\n" +
                 "\n" +
@@ -75,10 +75,10 @@ class TDDSongTest {
     }
 
     @org.junit.jupiter.api.Test
-    void TestBirdFlySpider() {
+    void TestBirdFlySpider() throws InterruptedException {
         TDDSong tddSong = new TDDSong();
         String[] cadena = {"bird", "fly", "spider"};
-        String result = tddSong.TDDSong(cadena);
+        String result = tddSong.generateSong(cadena);
         String esp = "There was an old lady who swallowed a bird.\n" +
                 "I don't know why she swallowed a bird - perhaps she'll die!\n" +
                 "\n" +
